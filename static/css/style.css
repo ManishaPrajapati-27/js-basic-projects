@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+li,
+span,
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-decoration: none;
+  list-style: none;
+}
+
+img,
+video {
+  width: 100%;
+}
+
+ul {
+  padding-left: 0;
+  padding-top: 20px;
+}
+
+.js-practice-sidebar {
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+}
+
+.js-practice-sidebar .sidebar {
+  width: 300px;
+  background: rgb(94, 94, 231);
+  min-height: 100vh;
+}
+
+.js-practice-sidebar .sidebar ul li {
+  padding: 10px 20px;
+}
+
+.js-practice-sidebar .sidebar ul li a {
+  color: white;
+  font-weight: 600;
+}
+
+.js-practice-sidebar .sidebar ul li a i {
+  font-size: 20px;
+  background: #eff1fd;
+  color: #5757e5;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 6px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.js-practice-sidebar .sidebar .sidebar-logo {
+  height: 60px;
+  background: rgb(40, 40, 46);
+  /* padding: 20px; */
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.js-practice-sidebar .sidebar .sidebar-logo a {
+  color: white;
+  font-size: 26px;
+}
+.js-practice-sidebar .sidebar .sidebar-logo span {
+  color: rgb(207, 210, 233);
+  font-size: 28px;
+}
+
+.js-practice-sidebar .sidebar-content {
+  /* width: calc(100% - 300px); */
+  background: rgb(220, 220, 241);
+  min-height: 100vh;
+}
+
+.js-practice-sidebar .sidebar-content nav {
+  background: rgb(106, 106, 112);
+  height: 60px;
+}
+
+.js-practice-sidebar .sidebar-content nav ul li a {
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.js-practice-sidebar .sidebar-content nav .toggle {
+  background: #a1a1d3;
+  border: 0;
+  display: inline-block;
+  outline: 0;
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+
+/* Toggle Button */
+.js-practice-sidebar .sidebar {
+  position: relative;
+  left: 0;
+  transition: 0.5s ease all;
+}
+
+.js-practice-sidebar .sidebar-content {
+  width: calc(100% - 300px);
+  position: absolute;
+  left: 300px;
+  transition: 0.5s ease all;
+}
+
+.js-practice-sidebar.sb-active .sidebar-content {
+  width: calc(100% - 80px);
+  position: absolute;
+  left: 80px;
+  transition: 0.5s ease all;
+}
+
+.js-practice-sidebar.sb-active .sidebar {
+  width: 80px;
+  transition: 0.5s ease all;
+}
+
+.js-practice-sidebar.sb-active .sidebar a span {
+  display: none;
+  transition: 0.5s ease all;
+}
+
+/* Toggle Button */
+
+@media (max-width: 992px) {
+  /* Toggle Button */
+  .js-practice-sidebar .sidebar {
+    position: relative;
+    left: -300px;
+    top: 60px;
+    z-index: 1;
+    transition: 0.5s ease all;
+  }
+
+  .js-practice-sidebar .sidebar-content {
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    transition: 0.5s ease all;
+  }
+
+  .sidebar-logo.sb-active {
+    display: none;
+  }
+
+  .js-practice-sidebar.sb-active .sidebar-content {
+    left: 0;
+    width: 100%;
+  }
+
+  .js-practice-sidebar.sb-active .sidebar {
+    left: 0px;
+    top: 60px;
+    width: 300px;
+    transition: 0.5s ease all;
+  }
+
+  .js-practice-sidebar.sb-active .sidebar a span {
+    display: inline-block;
+    transition: 0.5s ease all;
+  }
+}
